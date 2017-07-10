@@ -24,11 +24,11 @@ var _TextField = require('material-ui/TextField');
 
 var _TextField2 = _interopRequireDefault(_TextField);
 
-var _expandMore = require('material-ui/svg-icons/navigation/expand-more');
+var _expandMore = require('material-ui/svg-icons/hardware/keyboard-arrow-right');
 
 var _expandMore2 = _interopRequireDefault(_expandMore);
 
-var _expandLess = require('material-ui/svg-icons/navigation/expand-less');
+var _expandLess = require('material-ui/svg-icons/hardware/keyboard-arrow-down');
 
 var _expandLess2 = _interopRequireDefault(_expandLess);
 
@@ -120,18 +120,19 @@ var TreeList = function (_Component) {
                 haveSearchbar = _props2.haveSearchbar,
                 handleSearch = _props2.handleSearch;
 
+            const { activeItemBackgroundColor, listItemStyle, indentation } = this.props;
 
             var listItemsModified = listItems.map(function (listItem, i, inputArray) {
                 listItem._styles = {
-                    root: {
-                        paddingLeft: (listItem.depth - startingDepth) * 16,
-                        backgroundColor: activeListItem === i ? 'rgba(0,0,0,0.2)' : null,
+                    root: Object.assign({
+                        paddingLeft: (listItem.depth - startingDepth) * (indentation || 16),
+                        backgroundColor: activeListItem === i ? (activeItemBackgroundColor || 'rgba(0,0,0,0.2)') : null,
                         height: listHeight,
                         cursor: listItem.disabled ? 'not-allowed' : 'pointer',
                         color: listItem.disabled ? 'rgba(0,0,0,0.4)' : 'rgba(0,0,0,0.87)',
                         overflow: 'hidden',
                         transform: 'translateZ(0)'
-                    }
+                    }, listItemStyle || {}) 
                 };
                 return listItem;
             });
@@ -176,8 +177,9 @@ var TreeList = function (_Component) {
                         key: 'treeListItem-' + i,
                         primaryText: listItem._primaryText,
                         style: Object.assign({}, listItem._styles.root),
+                        innerDivStyle: {padding: '16px 56px 16px 52px'},
                         leftIcon: getLeftIcon(listItem, _this2.props.useFolderIcons),
-                        rightIcon: !listItem.children ? null : expandedListItems.indexOf(i) === -1 ? _react2.default.createElement(_expandMore2.default, null) : _react2.default.createElement(_expandLess2.default, null),
+                        rightIcon: !listItem.children || listItem.children.length == 0 ? null : expandedListItems.indexOf(i) === -1 ? _react2.default.createElement(_expandMore2.default, null) : _react2.default.createElement(_expandLess2.default, null),
                         onTouchTap: function onTouchTap() {
                             if (listItem.disabled) return;
                             _this2.handleTouchTap(listItem, i);
@@ -314,7 +316,10 @@ TreeList.propTypes = {
     listHeight: _propTypes2.default.number,
     useFolderIcons: _propTypes2.default.bool,
     haveSearchbar: _propTypes2.default.bool,
-    searchTerm: _propTypes2.default.string
+    searchTerm: _propTypes2.default.string,
+    indentation: _propTypes2.default.number,
+    activeItemBackgroundColor: _propTypes2.default.string,
+    listItemStyle: _propTypes2.default.object,
 };
 
 exports.default = TreeList;

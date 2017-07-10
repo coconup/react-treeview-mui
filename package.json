@@ -1,8 +1,75 @@
 {
-  "name": "react-treeview-mui",
-  "version": "0.1.2",
+  "_args": [
+    [
+      {
+        "raw": "nest-aka-swan/react-treeview-mui",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "nest-aka-swan/react-treeview-mui",
+        "spec": "github:nest-aka-swan/react-treeview-mui",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:nest-aka-swan/react-treeview-mui.git",
+          "sshUrl": "git+ssh://git@github.com/nest-aka-swan/react-treeview-mui.git",
+          "httpsUrl": "git+https://github.com/nest-aka-swan/react-treeview-mui.git",
+          "gitUrl": "git://github.com/nest-aka-swan/react-treeview-mui.git",
+          "shortcut": "github:nest-aka-swan/react-treeview-mui",
+          "directUrl": "https://raw.githubusercontent.com/nest-aka-swan/react-treeview-mui/master/package.json"
+        }
+      },
+      "/Users/andrea/VirtualBox VMs/bi-stuff/bi_hero_fe"
+    ]
+  ],
+  "_from": "nest-aka-swan/react-treeview-mui",
+  "_id": "react-treeview-mui@0.1.2",
+  "_inCache": true,
+  "_location": "/react-treeview-mui",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "nest-aka-swan/react-treeview-mui",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "nest-aka-swan/react-treeview-mui",
+    "spec": "github:nest-aka-swan/react-treeview-mui",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:nest-aka-swan/react-treeview-mui.git",
+      "sshUrl": "git+ssh://git@github.com/nest-aka-swan/react-treeview-mui.git",
+      "httpsUrl": "git+https://github.com/nest-aka-swan/react-treeview-mui.git",
+      "gitUrl": "git://github.com/nest-aka-swan/react-treeview-mui.git",
+      "shortcut": "github:nest-aka-swan/react-treeview-mui",
+      "directUrl": "https://raw.githubusercontent.com/nest-aka-swan/react-treeview-mui/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git://github.com/nest-aka-swan/react-treeview-mui.git#62e6d9d77f38737b87694ac4fa84390adbd530ed",
+  "_shasum": "887641f63d861aa217b84e0ffeb97df62b65c0ed",
+  "_shrinkwrap": null,
+  "_spec": "nest-aka-swan/react-treeview-mui",
+  "_where": "/Users/andrea/VirtualBox VMs/bi-stuff/bi_hero_fe",
+  "author": {
+    "name": "Jin Yoo"
+  },
+  "dependencies": {},
   "description": "React Component for treeviews that can use material-ui",
-  "main": "./src/index.js",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "material-ui": "^0.18.3",
+    "prop-types": "^15.5.10",
+    "react-scripts": "1.0.7",
+    "react-tap-event-plugin": "^2.0.1",
+    "react-transition-group": "^1.1.3"
+  },
+  "gitHead": "62e6d9d77f38737b87694ac4fa84390adbd530ed",
   "keywords": [
     "react",
     "react-component",
@@ -10,28 +77,23 @@
     "design",
     "material-ui"
   ],
-  "author": "Jin Yoo",
   "license": "MIT",
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "material-ui": "^0.18.3",
-    "react-transition-group": "^1.1.3",
-    "react-scripts": "1.0.7",
-    "react-tap-event-plugin": "^2.0.1",
-    "prop-types": "^15.5.10"
-  },
+  "main": "./src/index.js",
+  "name": "react-treeview-mui",
+  "optionalDependencies": {},
   "peerDependencies": {
     "react": "^15.5.0",
     "react-dom": "^15.5.0"
   },
+  "readme": "# React Treeview with Material UI\n\nA Treeview React Component that can use [material-ui](https://github.com/callemall/material-ui)'s styling.\n\n* [LIVE DEMO](https://fiffty.github.io/react-treeview-mui/)\n* [Example code](https://github.com/fiffty/react-treeview-mui/blob/master/demo/example.js)\n\n![react-treeview-mui Demo Gif](http://minigrande.com/treelist-demo.gif)\n\n## Installation\n\n```\n$ npm install --save react-treeview-mui\n```\n\n```javascript\nimport import React, {Component, PropTypes} from 'react'\n// With material-ui\n// be sure to have <MuiTreeList /> inside <MuiThemeProvider />\nimport {MuiTreeList} from 'react-treeview-mui'\n// Without material-ui styling\nimport {TreeList} from 'react-treeview-mui'\n\n// UI state (e.g., expanded list items) is tracked locally\nconst listItems = [...,{title: 'List Item'},...]\nclass MyComponent extends Component {\n\trender() {\n\t\t<MuiTreeList\n\t\t\tlistItems={listItems}\n\t\t\tcontentKey={'title'} />\n\t}\n}\n\n// UI state is tracked outside of <MuiTreeList />\n// Maybe through Redux\nclass MySecondComponent extends Component {\n\trender() {\n\t\t<MuiTreeList \n\t\t\tlistItems={listItems}\n\t\t\tcontentKey={'title'}\n\t\t\tuseFolderIcons={true}\n\t\t\thaveSearchbar={true}\n\t\t\tlistItemIsEnabled={this.props.listItemIsEnabled}\n\t\t\texpandedListItems={this.props.expandedListItems}\n\t\t\tactiveListItem={this.props.activeListItem}\n\t\t\thandleTouchTap={this.props.handleTouchTap}\n\t\t\thandleTouchTapInSearchMode={this.props.handleTouchTapInSearchMode}\n\t\t\thandleSearch={this.props.handleSearch}\n\t\t\tsearchTerm={this.props.searchTerm} />\n\t}\n}\n```\n\n## Usage\n\n### Data for nodes\n\nOne of the required props for the Component is the data for the list items. Instead of an object data structure with child list items nested inside parent list items, the Component takes in an array of list item objects. To accomodate this structure, the objects have a few required keys as following:\n\n```javascript\nconst listItems = [\n{\n    // Each list item is tracked by its index in the master array\n    depth: 0, // Used to style the list item. Items with 0 depth will not be rendered and act as the root parent\n    children: [1, 3, 10] // Indexes for child list items. If undefined, list item will be treated as leaf\n}   \n...,\n{\n    depth: 1,\n    children: [12,16],\n    parentIndex: 0, // Index of parent list item\n    disabled: false // false by default, disables click event listeners for disabled list items\n},{\n    depth: 2,\n    children: [13,14,15],\n    parentIndex: 11,\n    disabled: false\n},\n...\n]\n```\n**Why use an Array?**\n\nFirst off, it's [faster](https://medium.com/@fiffty/things-i-learned-while-trying-to-make-a-fast-treeview-in-react-e3b23cd4ab74#.7pw9t9943). But unless you're rendering hundreds and hundreds of list items, speed wouldn't be your concern.\n\nApart from that, it comes from personal preference. I found it to be easier to reason about how the Component should react to change in state. Specifically, I found that it aligned well with \"the Redux-way\" of thinking about state management with reducers. \n\n### Props\n\n| name | type | default  | description |\n| --- | --- | --- | --- |\n| listItems | [Object] | **required** | An array of list item objects. |\n| contentKey | String | **required** | The name of the key inside list item objects whose value should be used for the content in the rendered list items. |\n| style | Object | undefined | JavaScript style object to overwrite preset styles. |\n| expandedListItems | [Integer] | undefined | An array of the index values of list items that should be expanded. If no value is given, the expansion of tree nodes will be tracked by state internal to the Component. |\n| activeListItem | Integer | undefined | Index value of the active list item. If no value is given, it will be tracked by state internal to the Component. |\n| haveSearchbar | Boolean | false | If true, a searchbar component will be added. |\n| searchTerm | String | undefined | String value for search term. If no value is given, it will be tracked by state internal to the Component. |\n| handleSearch | Function | undefined | The default search function is very rudimentary. Insert a function to override the default behavior. Receives the search term (String) as first parameter. |\n| handleTouchTap | Function | undefined | Function that gets called when a If `expandedListItems` and `activeListItem` is tracked outside of the Component, this function must deal with those states as well. Receives the list item (Object) and the index value of that list item (Int) as parameters. |\n| handleTouchTapInSearchMode | Function | undefined | Receives the search term (String) as first parameter. |\n| listHeight | Integer | undefined | Overwrites the height (in px) of list items |\n| useFolderIcons | Boolean | undefined | Only for MuiTreeList. If true, will use folder and file icons for list items. |\n\n### Animation \n\nThe Component uses [ReactCSSTransitionGroup](https://facebook.github.io/react/docs/animation.html) to animate the items inside the treeview. It exposes the classes `tree-list-enter` and `tree-list-leave` to style.\n\n**example**\n```css\n.tree-list-enter {\n\tanimation-name: tree-list-enter;\n\tanimation-duration: 0.3s;\n\tanimation-fill-mode: forwards;\n  transform: translateZ(0);\n}\n.tree-list-leave {\n\tanimation-name: tree-list-leave;\n\tanimation-duration: 0.2s;\n\tanimation-fill-mode: forwards;\n}\n@keyframes tree-list-enter {\n\t0% {\n\t\theight: 0px;\n\t\topacity: 0.01;\n\t}\n\t100% {\n\t\theight: 32px;\n\t\topacity: 1;\n\t}\n}\n@keyframes tree-list-leave {\n\t0% {\n\t\theight: 32px;\n\t\topacity: 1;\n\t}\n\t100% {\n\t\theight: 0px;\n\t\topacity: 0.01;\n\t}\n}\n```\n",
+  "readmeFilename": "README.md",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
     "babel-build": "babel src/es2015 --out-dir src",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
     "prepublish": "npm run babel-build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "start": "react-scripts start",
+    "test": "react-scripts test --env=jsdom"
+  },
+  "version": "0.1.2"
 }
