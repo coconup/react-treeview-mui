@@ -48,7 +48,7 @@ var ListItem = function (_Component) {
                     transition: 'all 0.25s ease-in-out'
                 },
                 primaryText: {
-                    lineHeight: '32px'
+                    lineHeight: '32px',
                 }
             };
 
