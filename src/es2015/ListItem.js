@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 class ListItem extends Component {
     render() {
         const {primaryText, style} = this.props
-        const {onTouchTap, leftIcon} = this.props
+        const {onClick, leftIcon} = this.props
 
         const styles = {
             root: {
@@ -19,7 +19,7 @@ class ListItem extends Component {
         return (
             <div
                 style={Object.assign({}, styles.root, style)}
-                onTouchTap={onTouchTap}>
+                onClick={onClick}>
                 {leftIcon}
                 <span style={Object.assign({}, styles.primaryText)}>
                     {primaryText}
@@ -34,7 +34,7 @@ ListItem.propTypes = {
     style: PropTypes.object.isRequired,
     leftIcon: PropTypes.element,
     rightIcon: PropTypes.element,
-    onTouchTap: PropTypes.func
+    onClick: PropTypes.func
 }
 
 export default ListItem

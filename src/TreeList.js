@@ -160,7 +160,7 @@ var TreeList = function (_Component) {
                         primaryText: listItem._primaryText,
                         style: Object.assign({}, listItem._styles.root),
                         leftIcon: getLeftIcon(listItem, i, expandedListItems),
-                        onTouchTap: function onTouchTap() {
+                        onClick: function onClick() {
                             if (listItem.disabled) return;
                             _this2.handleTouchTap(listItem, i);
                         } });

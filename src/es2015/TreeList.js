@@ -112,7 +112,7 @@ class TreeList extends Component {
                             primaryText={listItem._primaryText}
                             style={Object.assign({}, listItem._styles.root)}
                             leftIcon={getLeftIcon(listItem, i, expandedListItems)}
-                            onTouchTap={()=> {
+                            onClick={()=> {
                                 if (listItem.disabled) return
                                 this.handleTouchTap(listItem, i)
                             }} />

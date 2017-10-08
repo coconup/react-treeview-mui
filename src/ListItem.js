@@ -38,7 +38,7 @@ var ListItem = function (_Component) {
                 primaryText = _props.primaryText,
                 style = _props.style;
             var _props2 = this.props,
-                onTouchTap = _props2.onTouchTap,
+                onClick = _props2.onClick,
                 leftIcon = _props2.leftIcon;
 
 
@@ -48,7 +48,7 @@ var ListItem = function (_Component) {
                     transition: 'all 0.25s ease-in-out'
                 },
                 primaryText: {
-                    lineHeight: '32px',
+                    lineHeight: '32px'
                 }
             };
 
@@ -56,7 +56,7 @@ var ListItem = function (_Component) {
                 'div',
                 {
                     style: Object.assign({}, styles.root, style),
-                    onTouchTap: onTouchTap },
+                    onClick: onClick },
                 leftIcon,
                 _react2.default.createElement(
                     'span',
@@ -75,7 +75,7 @@ ListItem.propTypes = {
     style: _propTypes2.default.object.isRequired,
     leftIcon: _propTypes2.default.element,
     rightIcon: _propTypes2.default.element,
-    onTouchTap: _propTypes2.default.func
+    onClick: _propTypes2.default.func
 };
 
 exports.default = ListItem;
